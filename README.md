@@ -1,8 +1,8 @@
-# cm_front_css
+# cm_front_figma
 Course frontend 2023
 
 ## FrontEnd course CSS 
-Home Work 5
+Home Work 6 - Figma
 
 ## Buid env
 - staging: ``` $ npm run dev ```
