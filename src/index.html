@@ -8,9 +8,35 @@
 
 <body>
     <div class="main-block">
-        <header class="header"></header>
         <section class="sec">
-            <div class="sec">1</div>
+            <header class="sec__header">
+                <div class="sec__header__logo">
+                    <img src=<%=require("./images/logo_white.svg")%> alt="Фото чужого" />
+                </div>
+                <div class="sec__header__menu">
+                    <span>ОПИСАНИЕ</span>
+                    <span>ПРИМЕНЕНИЕ</span>
+                    <span>УЧАСТИЕ</span>
+                </div>
+            </header>
+
+            <picture class="sec__background">
+                <img srcset=<%=require("./images/top_image.png")%> alt="Фото чужого" />
+            </picture>
+
+            <div class="sec__title">
+                <div class="sec__title__main">Ксеноморф XX121</div>
+                <div class="sec__title__dop">
+                    <p>
+                        Ваше лучшее вложение в будущее свое и всего человечества
+                    </p>
+                </div>
+            </div>
+            <div class="sec__join-button">
+                <span class="sec__join-button__text">
+                    ПРИНЯТЬ УЧАСТИЕ
+                </span>
+            </div>
         </section>
     </div>
 
