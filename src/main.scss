@@ -42,12 +42,12 @@ body {
 
     &__header {
         position: relative;
-        // top: 26px;
+        top: -800px;
 
         &__logo {
             // position: absolute;
-            left: 156px;
             position: relative;
+            left: 156px;
 
             img {
                 width: 168px;
@@ -74,7 +74,7 @@ body {
     }
 
     &__title {
-        position: absolute;
+        position: relative;
         top: 336px;
 
         &__main {
@@ -100,7 +100,7 @@ body {
 
     &__join-button {
         // position: relative;
-        position: absolute;
+        position: relative;
         top: 468px;
         left: 156px;
         border-radius: 16px;
