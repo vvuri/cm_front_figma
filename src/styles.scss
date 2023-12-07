@@ -1,15 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400..800&display=swap");
+@forward './scss/theme';
 
-:root {
-    --main-background-color: black;
-    --material-theme-sys-light-on-primary: #FFF;
-    --material-theme-sys-light-primary: #006399;
-}
+@use './scss/mixins';
+
+// :root {
+//     --main-background-color: black;
+//     --material-theme-sys-light-on-primary: #FFF;
+//     --material-theme-sys-light-primary: #006399;
+// }
 
 html,
 body {
     height: 100%;
-    background-color: var(--main-background-color);
+    // background-color: var(--main-background-color);
     font-size: 32px;
 }
 
@@ -78,12 +80,13 @@ body {
         top: 336px;
 
         &__main {
-            font-family: Roboto;
-            font-size: 57px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 64px;
-            letter-spacing: -0.25px;
+            @include mixins.display-large;
+            // font-family: Roboto;
+            // font-size: 57px;
+            // font-style: normal;
+            // font-weight: 400;
+            // line-height: 64px;
+            // letter-spacing: -0.25px;
             color: var(--material-theme-sys-light-on-primary);
         }
 
