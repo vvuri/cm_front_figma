@@ -49,7 +49,9 @@ body {
         grid-column: 1/-1;
         display: flex;
         flex-direction: row;
-        column-gap: 400px;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        // column-gap: 400px;
 
         &__logo {
             padding-top: 26px;
@@ -102,12 +104,23 @@ body {
 
 }
 
+
+.single-line {
+    height: 200px;
+    grid-column: 2/-2;
+    color: var(--md-sys-color-on-primary);
+    @include mixins.display-large;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+
 .sec {
     &--full-width {
         --grid-column: 1/-1;
-
-        background-color: darkgray;
-        height: 200px;
+        background: var(--md-sys-color-inverse-surface);
     }
 }
 
