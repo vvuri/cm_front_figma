@@ -124,6 +124,37 @@ body {
     }
 }
 
+.motivation {
+    grid-column: 2/-2;
+    // padding-inline: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-block: 100px;
+
+    &__image {
+        &--left {
+            justify-content: left;
+        }
+
+        &--right {
+            justify-content: right;
+        }
+    }
+
+    &__content {
+        &__header {
+            color: var(--md-sys-color-primary);
+            @include mixins.display-small;
+        }
+
+        &__text {
+            color: var(--md-sys-color-on-background);
+            @include mixins.body-large;
+        }
+    }
+
+}
+
 // p {
 //     display: block;
 // }
