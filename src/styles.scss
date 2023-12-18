@@ -2,6 +2,9 @@
 
 @use './scss/mixins';
 
+$breakpoint-desctop: 1200px;
+$breakpoint-laptop: 900px;
+
 html,
 body {
     height: 100%;
@@ -11,6 +14,12 @@ body {
 body {
     --colums: 12;
     --offset: 156px;
+    --hero-title-size: 1/8;
+    --motivation-columns: 2;
+    --motivation-left: left;
+    --motivation-right: right;
+    --_is-item-hidden: var(--is-item-hidden, flex);
+    --_not-item-hidden: var(--is-item-hidden, none);
 
     display: grid;
     grid-template-columns: var(--offset) repeat(var(--colums), 1fr) var(--offset);
@@ -28,6 +37,21 @@ body {
         grid-column: var(--_grid-column);
         grid-template-columns: subgrid;
     }
+
+    @media(max-width: $breakpoint-desctop) {
+        --offset: 32px;
+        --hero-title-size: 1/10;
+    }
+
+    @media(max-width: $breakpoint-laptop) {
+        --offset: 12px;
+        --hero-title-size: 1/-1;
+        --motivation-columns: 1;
+        --motivation-left: center;
+        --motivation-right: center;
+        --is-item-hidden: none;
+        --_not-item-hidden: flex;
+    }
 }
 
 .hero-sec {
@@ -44,14 +68,11 @@ body {
     }
 
     &__header {
-        // display: grid;
-        // grid-template-columns: 1fr 1fr;
         grid-column: 1/-1;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         flex-wrap: nowrap;
-        // column-gap: 400px;
 
         &__logo {
             padding-top: 26px;
@@ -67,11 +88,26 @@ body {
             display: flex;
             flex-direction: row;
             gap: 32px;
+
+            &--hidden {
+                display: var(--_is-item-hidden);
+            }
+
+            &--not-hidden {
+                display: var(--_not-item-hidden);
+                font-family: "Material Symbols Outlined";
+                font-variation-settings:
+                    'FILL' var(--selected),
+                    'wght' var(--selected-wght),
+                    'GRAD' 0,
+                    'opsz' 24;
+                font-size: 36px;
+            }
         }
     }
 
     &__title {
-        grid-column: 1/8;
+        grid-column: var(--hero-title-size);
         display: flex;
         flex-direction: column;
 
@@ -87,19 +123,17 @@ body {
     }
 
     &__join-button {
-        grid-column: 1/8;
+        grid-column: var(--hero-title-size);
         height: 64px;
         padding-block: 24px 24px;
         border-radius: 16px;
         box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.30);
-
         background-color: var(--md-sys-color-primary);
 
         @include mixins.display-large;
         color: var(--md-sys-color-on-primary);
         text-align: center;
         justify-content: center;
-
     }
 
 }
@@ -109,6 +143,10 @@ body {
     padding-block: 93px;
     margin-left: auto;
     margin-right: auto;
+
+    img {
+        width: clamp(400px, 100%, 1400px);
+    }
 }
 
 .single-line {
@@ -176,9 +214,8 @@ body {
 
 .motivation {
     grid-column: 1/-1;
-    // padding-inline: 100px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(var(--motivation-columns), 1fr);
     margin-block: 100px;
     column-gap: 16px;
     row-gap: 50px;
@@ -189,7 +226,7 @@ body {
 
     &__image {
         &--left {
-            justify-content: left;
+            justify-content: var(--motivation-left);
 
             img {
                 border-radius: 16px;
@@ -197,10 +234,10 @@ body {
         }
 
         &--right {
-            justify-content: right;
+            justify-content: var(--motivation-right);
 
             img {
-                float: right;
+                float: var(--motivation-right);
                 border-radius: 16px;
             }
         }
@@ -219,7 +256,3 @@ body {
     }
 
 }
-
-// p {
-//     display: block;
-// }
