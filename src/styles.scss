@@ -186,10 +186,19 @@ body {
     &__image {
         &--left {
             justify-content: left;
+
+            img {
+                border-radius: 16px;
+            }
         }
 
         &--right {
             justify-content: right;
+
+            img {
+                float: right;
+                border-radius: 16px;
+            }
         }
     }
 
