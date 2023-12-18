@@ -183,6 +183,10 @@ body {
     column-gap: 16px;
     row-gap: 50px;
 
+    &--blue {
+        grid-column: 2/-2;
+    }
+
     &__image {
         &--left {
             justify-content: left;
